@@ -3,7 +3,7 @@
     <footer>
         <div class="container">
             <div class="row">
-            	<div class="col-lg-5">
+            	<div class="col-lg-4">
             		<p class="muted text-small">
             		    BookStack - Created By <a href="https://danb.me" title="danb.me" target="_blank" rel="noopener">Dan Brown</a> and developed with the <a href="https://github.com/BookStackApp/BookStack/graphs/contributors" target="_blank" rel="noopener">community</a>.
                         <br>
@@ -11,11 +11,12 @@
                         Page generated with <a href="https://gohugo.io">hugo</a>, Site source can be found <a href="https://github.com/BookStackApp/website" rel="noopener" target="_blank">here on GitHub</a>.
             		</p>
             	</div>
-            	<div class="col-lg-7 col-md-9 menu">
+            	<div class="col-lg-8 col-md-9 menu">
                     <a href="{{.Site.BaseURL}}docs"><span class="icon">{{partial "icon/book.svg"}}</span>Documentation</a>
                     <a href="{{.Site.BaseURL}}#features"><span class="icon">{{partial "icon/star.svg"}}</span>Features</a>
                     <a href="{{.Site.BaseURL}}#demo"><span class="icon">{{partial "icon/touch_app.svg"}}</span>Demo</a>
                     <a href="https://github.com/BookStackApp/BookStack" target="_blank"><span class="icon">{{partial "icon/github.svg"}}</span>Github</a>
+                    <a href="https://discord.gg/ztkBqR2" target="_blank"><span class="icon">{{partial "icon/discord.svg"}}</span>Discord</a>
                     <a href="{{.Site.BaseURL}}blog" target="_blank"><span class="icon">{{partial "icon/rss_feed.svg"}}</span>Blog</a>
             	</div>
             </div>
@@ -25,7 +26,7 @@
         </div>
     </footer>
 
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
     <script type="text/javascript">
     if (document.querySelector('.doc-search-input') !== null) {
         docsearch({

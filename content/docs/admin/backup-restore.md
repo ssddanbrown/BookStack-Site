@@ -73,10 +73,12 @@ data. Copy this to a safe place, ideally on a different device.
 
 ## Restore
 
-If you are restoring from scratch follow the
-[installation](/docs/admin/installation)
-instructions first to get a new BookStack instance up and running. Once you are
-sure the new instance is working follow the instructions below.
+If you are restoring from scratch follow the [installation](/docs/admin/installation)
+instructions first to get a new BookStack instance set-up.
+**Do not run the `php artisan migrate` installation step** when installing BookStack.
+You may need to comment this command out if using an installer script. If using
+a docker container, restore the database before running the BookStack container.
+Once you are sure the new instance is set-up follow the instructions below.
 
 #### Database
 

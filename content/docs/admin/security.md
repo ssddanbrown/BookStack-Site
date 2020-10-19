@@ -17,6 +17,7 @@ relates to BookStack itself. The security of the server BookStack is hosted on i
     <li><a href="#javascript-in-page-content">JavaScript in Page Content</a></li>
     <li><a href="#web-crawler-control">Web Crawler Control</a></li>
     <li><a href="#secure-cookies">Secure Cookies</a></li>
+    <li><a href="#failed-access-logging">Failed Access Logging</a></li>
 </ul>
 
 ---
@@ -126,3 +127,21 @@ The rules found in the `/robots.txt` file are automatically controlled via the "
 ### Secure Cookies
 
 BookStack uses cookies to track sessions, remember logins and for XSRF protection. When using HTTPS you may want to ensure that cookies are only sent back to the browser if the connection is over HTTPS. This can be enabled by setting `SESSION_SECURE_COOKIE=true` in your `.env` file.
+
+---
+
+<a name="failed-access-logging"></a>
+
+### Failed Access Logging
+
+An option is available to log failed login events to a log file which is useful to identify users having trouble logging in, track malicious login attempts or to use with tools such as Fail2Ban. This works with login attempts using the default email & password login mechanism or attempts via LDAP login. Failed attempts are **not logged** for "one-click" social or SAML2 options.
+
+To enable this you simple need to define the `LOG_FAILED_LOGIN_MESSAGE` option in your `.env` file like so:
+
+```bash
+LOG_FAILED_LOGIN_MESSAGE="Failed login for %u"
+```
+
+The optional "%u" element of the message will be replaced with the username or email provided in the login attempt
+when the message is logged. By default messages will be logged via the php `error_log` function which, in most
+cases, will log to your webserver error log files.

@@ -7,7 +7,7 @@
 
     {{ partial "twitter_card.html" . }}
 
-  	<meta property="og:title" content="{{ if ne .URL "/" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}" />
+  	<meta property="og:title" content="{{ if ne .RelPermalink "/" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}" />
   	<meta property="og:site_name" content="{{ .Site.Title }}" />
   	<meta property="og:url" content="{{ .Permalink }}" />
 
@@ -33,7 +33,7 @@
     {{ end }}
 
     <title>
-      {{ if ne .URL "/" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}
+      {{ if ne .RelPermalink "/" }} {{ .Title }} &middot; {{ end }} {{ .Site.Title }}
     </title>
 
     <meta name="description" content="{{ .Site.Params.description }}" />
@@ -52,20 +52,20 @@
     <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32" />
 
-    <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}css/styles.css?v=1.2" />
+    <link rel="stylesheet" type="text/css" href="{{.Site.BaseURL}}css/styles.css?v=1.3" />
 
 
     {{ if .Site.Params.RSSLink}}
         <link href="{{.Site.Params.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
     {{else}}
-      {{ if ne .URL "/" }}
+      {{ if ne .RelPermalink "/" }}
           <link href="{{ .Site.BaseURL }}index.xml" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
       {{ end }}
       {{if .IsNode}}
-        <link href="{{.RSSLink}}" rel="alternate" type="application/rss+xml" title="{{ if ne .URL "/" }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}" />
+        <link href="{{ with .OutputFormats.Get "RSS" }}{{ .Permalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ if ne .RelPermalink "/" }}{{ .Title }} &middot; {{ end }}{{ .Site.Title }}" />
       {{end}}
     {{end}}
-    {{.Hugo.Generator}}
+    {{hugo.Generator}}
 
     <link rel="canonical" href="{{ .Permalink }}" />
 
@@ -100,8 +100,6 @@
 
     <!-- at the end of the HEAD -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
-    <!-- at the end of the BODY -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
 
     {{ if .Site.Params.customHeaderPartial }}
         {{ partial .Site.Params.customHeaderPartial . }}
@@ -112,7 +110,7 @@
       <header id="header" class="header">
         <div class="container">
             <div class="row fix-mobile">
-                <div class="col-sm-4 col-xs-8">
+                <div class="col-md-3 col-sm-6 col-xs-8">
                     <div class="logo">
                         <a href="{{.Site.BaseURL}}">
                             {{partial "icon/logo.svg"}}
@@ -121,13 +119,14 @@
 
                     </div>
                 </div>
-                <div class="col-sm-8 menu col-xs-4">
+                <div class="col-md-9 col-sm-6 menu col-xs-4">
                     <button tabindex="1" id="menu-button" class="button muted" type="button">{{partial "icon/menu.svg"}}</button>
                     <div class="inner">
                         <a href="/docs"><span class="icon">{{partial "icon/book.svg"}}</span>Documentation</a>
                         <a href="/#features"><span class="icon">{{partial "icon/star.svg"}}</span>Features</a>
                         <a href="/#demo"><span class="icon">{{partial "icon/touch_app.svg"}}</span>Demo</a>
                         <a href="https://github.com/BookStackApp/BookStack" target="_blank"><span class="icon">{{partial "icon/github.svg"}}</span>Github</a>
+                        <a href="https://discord.gg/ztkBqR2" target="_blank"><span class="icon">{{partial "icon/discord.svg"}}</span>Discord</a>
                         <a href="/blog"><span class="icon">{{partial "icon/rss_feed.svg"}}</span>Blog</a>
                     </div>
                 </div>

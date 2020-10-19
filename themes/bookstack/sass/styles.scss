@@ -22,13 +22,13 @@
   margin-bottom: $-xxl*1.6;
   @include smaller-than($screen-lg) {
     margin-bottom: $-m;
-  } 
+  }
 }
 
 .screenshot-container-parent {
-  perspective: 1000px;
+  perspective: 800px;
   z-index: 5;
-  perspective-origin: 50% 50%; 
+  perspective-origin: 50% 50%;
 }
 
 @keyframes slow-rotate {
@@ -45,16 +45,17 @@
   border-radius: 4px;
   display: inline-block;
   overflow: hidden;
-  box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 12px 0px rgba(0, 0, 0, 0.2);
   border: 3px solid #DDD;
   position: absolute;
-  transform: rotateY(0);
+  transform: rotateY(0) translateX(0);
   transform-style: preserve-3d;
   transition: all ease-in-out 280ms;
   transform-origin: 50% 50%;
   z-index: 50;
   &:hover {
-    transform: rotateY(-10deg);
+    transform: rotateY(-10deg) translateX(20px);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
   }
   .window-row {
     line-height: 1;
@@ -294,11 +295,23 @@ input[type=text] {
     list-style: none;
     margin-left: 0;
   }
+  li {
+    padding: 2px 0;
+  }
 }
 
 .sidebar {
   border-right: 2px dotted #E5E5E5;
 }
+
+@include larger-than($xl) {
+  .sidebar {
+    position: sticky;
+    top: $-m;
+  }
+}
+
+
 
 h2.thin-margin {
   margin-top: 0;

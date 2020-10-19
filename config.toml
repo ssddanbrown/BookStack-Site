@@ -4,6 +4,13 @@ baseurl = "https://bookstackapp.com/"
 theme="bookstack"
 enableGitInfo=true
 
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+      xHTML = true
+
 [permalinks]
   post = "/blog/:slug/"
 

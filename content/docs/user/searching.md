@@ -9,8 +9,8 @@ The ability to search your documentation is vital to day-to-day use.
 There are a few locations within BookStack where you can search for your content.
 Below is a list of search functions within BookStack:
 
-* **Header Search Bar** - The search bar/link in the header of every page allows you to search from anywhere. This search is a global search which will look across all books, chapters and pages in your system. This page contains an interface to help you build a more advanced search. This interface simply generates a more advanced search term using the syntax described below.
-* **Book/Chapter Search Bar** - When viewing a book or chapter a search bar can be found in the top of the right sidebar. These searches will look across all child items.
+* **Header Search Bar** - The search bar/link in the header of every page allows you to search from anywhere. This search is a global search which will look across all books, chapters and pages in your system. After performing a search in this box you'll be led to a search page that includes options and features that can help you build a more advanced search.
+* **Book/Chapter Search Bar** - When viewing a book or chapter a search bar can be found in the top of the left sidebar. These searches will look across all child items.
 * **Move & Link Selection** - When choosing to move a page/chapter or when selecting a page/chapter/book to link to within the editor the most popular items are shown but you also have the ability to search.
 
 ---
@@ -30,13 +30,13 @@ All of the above search locations within BookStack share the ability to use adva
     <td>Normal Searches</td>
     <td>&lt;term_a&gt; &lt;term_b&gt;</td>
     <td>london meeting</td>
-    <td>Normal word search across the name and description or body of your content. When mulitple terms are searched only one term has to match your content but content containing both terms will be higher in the results.</td>
+    <td>Normal word searches across the name and description or body of your content. When mulitple terms are searched only one term has to match your content but content containing both terms will be higher in the results.</td>
   </tr>
   <tr>
     <td>Exact Searches</td>
     <td>"&lt;term&gt;"</td>
     <td>"london meeting"</td>
-    <td>Exact matches will require that the whole string within quotes exists in your content in exactly the same format. Used this if you're looking for an exact phrase containing or if you need to search for a term with spaces in.</td>
+    <td>Exact matches will require that the whole string within quotes exists in your content in exactly the same format. Use this if you're looking for an exact phrase containing or if you need to search for a term with spaces in.</td>
   </tr>
   <tr>
     <td>Tag Searches</td>
@@ -51,7 +51,7 @@ All of the above search locations within BookStack share the ability to use adva
       [location=london] <br>
       [attendees>5]
     </td>
-    <td>Tag searches allow you to find pages with that have specific tags applied. You can search by tag name, by tag value or by both name and value. When searching by tag value an operator must be used to define the match type. You can use <code>=</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>,<code>&lt;=</code>, <code>&gt;=</code> or <code>like</code> as operators. When using the <code>like</code> operator you can use <code>%</code> symbols to represent wildcards in your search.</td>
+    <td>Tag searches allow you to find pages which have specific tags applied. You can search by tag name, by tag value or by both name and value. When searching by tag value an operator must be used to define the match type. You can use <code>=</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>,<code>&lt;=</code>, <code>&gt;=</code> or <code>like</code> as operators. When using the <code>like</code> operator you can use <code>%</code> symbols to represent wildcards in your search.</td>
   </tr>
   <tr>
     <td>Filter Searches</td>
@@ -168,7 +168,7 @@ Filters are set advanced search features that can be used in your search term. T
       {type:page|chapter} <br>
       {type:book} <br>
     </td>
-    <td>Restricts the types of content that will be in the search results. <br> Use of this will depend on the type of search. For example, In a chapter search only pages are shown so this has no effect.</td>
+    <td>Restricts the types of content that will be in the search results. <br> Use of this will depend on the type of search. For example, in a chapter search only pages are shown so this has no effect.</td>
   </tr>
 </table>
 
@@ -188,7 +188,7 @@ Below are some examples of using the above syntax and filters with descriptions:
 * `textbook discussion [meeting] {type:page} {created_by:me}`
   * `textbook discussion` - Search content for the words `textbook` or `discussion`
   * `[meeting]` - only show content that has a `meeting` tag applied
-  * `{type:page}` - only show pages, Hide chapters and books
+  * `{type:page}` - only show pages, hide chapters and books
   * `{created_by:me}` - that was created by me.
 
   <br>

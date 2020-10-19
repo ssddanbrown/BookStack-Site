@@ -43,4 +43,17 @@ php artisan bookstack:regenerate-permissions
 
 # Delete all users from the system that are not "admin" or system users
 php artisan bookstack:delete-users
+
+# Copy the permission settings of a specified, or all, shelf to their child books
+php artisan bookstack:copy-shelf-permissions --all
+php artisan bookstack:copy-shelf-permissions --slug=my_shelf_slug
+
+# Update a URL in the database content of your BookStack instance.
+# Searches for <oldUrl> and replaces it with <newUrl>
+php artisan bookstack:update-url <oldUrl> <newUrl>
+# Example:
+php artisan bookstack:update-url http://docs.example.com https://demo.bookstackapp.com
+
+# Regenerate the stored HTML content for comments from their original text content
+php artisan bookstack:regenerate-comment-content
 ```

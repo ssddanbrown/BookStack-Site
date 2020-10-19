@@ -17,7 +17,7 @@
           {{$author := index .Site.Data.authors (or .Params.author .Site.Params.author)}}
           {{$authorname := or $author.name .Site.Params.author }}
           {{$authorthumbnail := or $author.thumbnail .Site.Params.author }}
-          <img class="post-avatar" width="32" src="{{$authorthumbnail}}" alt="{{$authorname}}"> {{$authorname}} posted on the {{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }} of {{ .Date.Format "January 2006" }}
+          <img class="post-avatar no-border" width="32" src="{{$authorthumbnail}}" alt="{{$authorname}}"> {{$authorname}} posted on the {{ .Date.Format "2" }}{{ if in (slice 1 21 31) .Date.Day}}st{{ else if in (slice 2 22) .Date.Day}}nd{{ else if in (slice 3 23) .Date.Day}}rd{{ else }}th{{ end }} of {{ .Date.Format "January 2006" }}
       </p>
 
       {{.Content}}

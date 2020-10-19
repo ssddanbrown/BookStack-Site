@@ -25,12 +25,14 @@
 
   <div class="row">
     <div class="col-sm-2 sidebar">
-      {{ if eq .Type "admin-doc" }}
+      <div class="sidebar-inner">
+        {{ if eq .Type "admin-doc" }}
         {{partial "menu_admin_docs"}}
-      {{end}}
-      {{ if eq .Type "user-doc" }}
+        {{end}}
+        {{ if eq .Type "user-doc" }}
         {{partial "menu_user_docs"}}
-      {{end}}
+        {{end}}
+      </div>
     </div>
 
     <div class="col-sm-8 col-sm-offset-1 docs-content">

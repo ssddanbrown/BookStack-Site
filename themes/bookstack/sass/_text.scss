@@ -64,7 +64,9 @@ h4 {
   margin-bottom: 0.43137255em;
 }
 
-h1, h2, h3, h4 {
+
+
+h1, h2, h3, h4, h5 {
   font-weight: 400;
   position: relative;
   display: block;
@@ -74,6 +76,14 @@ h1, h2, h3, h4 {
     line-height: 1em;
     color: lighten($text-dark, 16%);
   }
+}
+
+h5 {
+  font-size: 1.1em;
+  line-height: 1.375em;
+  margin-top: 0.78571429em;
+  margin-bottom: 0.43137255em;
+  font-weight: 500;
 }
 
 /*
@@ -288,6 +298,9 @@ ul {
 ol {
   list-style-type: decimal;
   padding-left: $-m*1.2;
+  li {
+    margin-bottom: 3px;
+  }
 }
 
 /*

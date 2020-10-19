@@ -10,7 +10,8 @@ body {
   font-size: $fs-m;
   line-height: 1.6;
   color: #616161;
-  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 table {

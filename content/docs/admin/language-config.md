@@ -23,21 +23,24 @@ APP_LANG=fr
 
 The value of the `APP_LANG` variable must be a valid locale code matching one of the following options:
 
-* English - `en`
-* German - `de`
-* Spanish - `es`
-* Spanish, Argentinian - `es_AR`
-* French - `fr`
-* Dutch - `nl`
 * Brazilian Portuguese - `pt_BR`
-* Slovakian - `sk`
-* Swedish - `sv`
-* Japanese - `ja`
-* Polish - `pl`
-* Italian - `it`
-* Russian - `ru`
 * Chinese (Simplified) - `zh_CN`
 * Chinese (Traditional) - `zh_TW`
+* Dutch - `nl`
+* English - `en`
+* French - `fr`
+* German (Formal) - `de`
+* German (Informal) - `de_informal`
+* Italian - `it`
+* Japanese - `ja`
+* Korean - `kr`
+* Polish - `pl`
+* Russian - `ru`
+* Slovakian - `sk`
+* Spanish - `es`
+* Spanish, Argentinian - `es_AR`
+* Swedish - `sv`
+* Ukrainian - `uk`
 
 ### Public User Locale Autodetection
 
@@ -48,4 +51,20 @@ in your `.env` file:
 
 ```bash
 APP_AUTO_LANG_PUBLIC=false
+```
+
+### Localised Date Formatting
+
+BookStack does support the localisation of date formats but it does depend on the intended locales being installed
+on the host system. If using ubuntu, you can manage installed locales via the command:
+
+```bash
+sudo dpkg-reconfigure locales
+```
+
+For other operating systems this may be different. After installing new locales you may need to restart any running PHP processes.
+For example, On Ubuntu, running PHP7.2:
+
+```bash
+sudo systemctl restart php7.2-fpm.service 
 ```

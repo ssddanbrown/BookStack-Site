@@ -14,15 +14,19 @@
 	border: 0;
 }
 
-.post-content img {
+.post-content img:not(.no-border) {
 	border-radius: 3px;
-	border: 1px solid $primary;
+	border: 1px solid #DDD;
 }
 
 .post-content video {
   max-width: 100%;
   border: 1px solid $primary;
   border-radius: 3px;
+}
+
+.post-content iframe {
+  max-width: 100%;
 }
 
 .pagination {
